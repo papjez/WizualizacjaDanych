@@ -62,3 +62,30 @@ nazwij_z_funkcji()
 # ----------------------
 # wlasciwe cwiczenia z pdf
 # ----------------------
+
+
+# zasady pisania w python
+# https://kamil.kwapisz.pl/gramatyka-dla-programisty/
+# https://analityk.edu.pl/jak-pisac-kod-w-python-aby-byl-czytelny-pep8/
+# https://peps.python.org/pep-0008/
+# https://legacy.python.org/dev/peps/pep-0008/
+
+___________________________
+c1.py
+___________________________
+
+var1 = 2
+var2 = 3
+var1 += 2
+var3 = var1
+var1 *= 3
+var4 = var1/var2
+
+
+# cwiczenie 5
+
+#print(var1+=2)
+print(var1, var2, var3, var4)
+var4 /= 2
+print('var4 = ', var4)
+# cwiczenie 6
