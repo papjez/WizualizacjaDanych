@@ -1,0 +1,29 @@
+print("Witaj świecie!")
+a = 2.5
+b = 3
+print(a*b)
+x = 54
+y = 85
+print(x/y)
+# print(x*z + "działanie przez niezdefiniowaną zmienną") (nie działa)
+# print(b/0)
+def przywitanie():
+    print("pozdro")
+def przywitanie_imienne(imie, zyczenia):
+    print("Elo " + imie + ". Zycze Tobie" + zyczenia)
+przywitanie()
+przywitanie_imienne("Andrzej", "zdrowia")
+def dzielenie(dzielna, dzielnik):
+    if(dzielnik == 0):
+        return
+    else:
+        return dzielna / dzielnik
+
+print(dzielenie(5,0))
+print("--------------")
+print(dzielenie(10,2))
+x = dzielenie(42, 12)
+print(x)
+# ----------------------
+# cwiczenie ze strony https://www.learnpython.org/pl/Funkcje
+# ----------------------
