@@ -1,3 +1,6 @@
+#########################################################
+# https://www.w3schools.com/python/python_functions.asp #
+#########################################################
 print("Witaj świecie!")
 a = 2.5
 b = 3
@@ -27,3 +30,16 @@ print(x)
 # ----------------------
 # cwiczenie ze strony https://www.learnpython.org/pl/Funkcje
 # ----------------------
+def lista_korzysci():
+    tablica = ["Lepiej zorganizowany kod",
+               "Wieksza czytelnosc kodu",
+               "Latwiejsze wielokrotne uzycie kodu",
+               "Mozliwosc dzielenia sie kodem i laczenia go w calosc przez rozne osoby"]
+    return tablica
+def buduj_zdanie(korzysc):
+    return korzysc + "jest zaleta funkcji!"
+def nazwij_z_funkcji():
+    tablica = lista_korzysci()
+    for korzysc in tablica:
+        print(buduj_zdanie(korzysc))
+nazwij_z_funkcji()
