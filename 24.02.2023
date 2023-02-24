@@ -1,0 +1,57 @@
+import math
+b = "jfhsgheghoehfwhfqfqhfiwgfflqwheu"
+
+
+def modularz(x, y):
+    if isinstance(x, float) or isinstance(y, float):
+        print(math.fmod(x, y))
+    else:
+        print(x % y)
+
+
+def log(a, n):
+    for i in range(2, n+1):
+        print(f"{math.log(a, i)} |", end="")
+
+
+def ret(a):
+    print(math.exp(a), math.e**a, math.pow(math.e, a))
+
+
+def parzyste(xd):
+    for i in range(0, len(xd)):
+        if i % 2 == 0:
+            print(xd[i])
+
+
+def lasty(cos, n):
+    od = len(cos) - n
+    dlugosc = len(cos)
+    print(cos[od:dlugosc])
+
+
+def dow(txt):
+    b = txt[::-1]
+    print(b)
+
+
+def thic(strong, streng):
+    if len(strong)>len(streng):
+        print(strong)
+    else:
+        print(streng)
+
+
+def format(imie, data):
+    stringus = f"Moje imie to {imie}. Moja data urodzenia to {data}."
+    print(stringus)
+
+
+# parzyste(b)
+# lasty("goerhosdjhf", 3)
+# dow("makowiec")
+# thic("t","trd")
+# format("andrzej","20:12:2003")
+modularz(76, 7)
+log(2, 6)
+ret(4)
