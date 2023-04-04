@@ -1,0 +1,78 @@
+#cwiczenie 1
+imiona = ["michal","nela","ola","przemek"]
+
+# cw 1.1
+imiona_z_deRzej=[imie.capitalize() for names in imiona]
+
+print(imiona_z_deRzej)
+# cw 1.2
+imie_z_L = [element for element in lista if 'l' in element]
+print(imie_z_L)
+
+# cw 1.3
+imiona_zenskie = []
+for imie in imiona:
+    if imie[0].isupper() and imie [-1] == 'a':
+        imiona_zenskie.append(imie)
+
+imiona_zenskie = tuple(imiona_zenskie)
+
+# cw 1.4
+total_lenght = 0
+
+for imie in imiona:
+    total_lenght = total_lenght+len(imiona)
+
+print(total_lenght)
+# CWICZENIE 2
+import statistics
+import math
+# CW 2.1
+def iloczyn(*args):
+    wynik =1
+    for arg in args:
+        wynik = wynik*arg
+    return wynik
+
+# CW 2.2
+
+def suma_n_tych_poteg(n,*args):
+     suma = 0
+     for arg in args:
+         suma + suma+arg**n
+     return suma
+# CW 2.3
+def srednia_arytmetyczna(*args):
+    if len(args)==0:
+        return none
+    else:
+      return statistics.mean(args)
+
+def srednia_geometryczna(*args):
+    if len(args)==0:
+        return none
+    else:
+      return statistics.geometric_mean(args)
+
+# CW 2.4
+def suma_stringow(*strings):
+    lenght = 0
+    for s in strings:
+        lenght = lenght+ len(s)
+    return lenght
+# CW 3
+
+# CW 3.1
+def funckja_kwargs(**kwargs):
+    for name,phone in kwargs.items():
+        print(f"{name} ma numer telefonu ({phone})")
+
+# CW 3.2
+
+def oblicz_zarobki(**kwargs):
+    zarobki = list(kwargs.values())
+    n = len(zarobki)
+    srednia = suma(zarobki)/n
+    srednia_procentowa = math.prod([(zarobki[i]/zarobki[i-1])**(1/n-1) for i in range(1,n)])
+
+
