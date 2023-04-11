@@ -86,4 +86,41 @@ def oblicz_zarobki(**kwargs):
     srednia = suma(zarobki)/n
     srednia_procentowa = math.prod([(zarobki[i]/zarobki[i-1])**(1/n-1) for i in range(1,n)])
 
+import datetime
+
+pesel=input("Podaj pesel")
+
+T={}
+
+if (len(pesel)!=11 and pesel.isdigit()==1):
+    print("zla dlugosc !!!")
+elif pesel.isdigit()==0:
+    print("zly format !!!")
+else:
+    for i in range (0,len(pesel)):
+        T[i]=int(pesel[i])
+rok=int(pesel[1:2])
+miesiac = int(pesel[3:4])
+dzien = int(pesel[4:6])
+plec = int(pesel[9])
+
+
+if plec % 2==0:
+    print("kobieta")
+else:
+    print("mezczyzna")
+
+if(rok in range(1,12)):
+    rok+=2000
+elif(rok in range(21,32)):
+    rok+=2100
+elif(rok in range(41,52)):
+    rok+=2200
+elif(rok in range(61,72)):
+    rok+=2300
+elif(rok in range(81,92)):
+    rok+=1900
+print("rok:",rok)
+print("miesiac:",miesiac)
+print("dzien:",dzien)
 
