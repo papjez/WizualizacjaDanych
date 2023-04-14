@@ -1,0 +1,146 @@
+class Fruit:
+    def __init__(self, color, weight):
+        self.color = color
+        self.weight = weight
+
+    def isfresh(self):
+        if self.color == "green":
+            return True
+        else:
+            return False
+
+
+class Apple(Fruit):
+    def __init__(self, color="green", weight=0.1):
+        super().__init__(color, weight)
+
+
+class Banana(Fruit):
+    def __init__(self, color="yellow", weight=0.2):
+        super().__init__(color, weight)
+
+
+class Orange(Fruit):
+    def __init__(self, color="orange", weight=0.3):
+        super().__init__(color, weight)
+
+apple = Apple()
+print(apple.isfresh())
+
+banana = Banana()
+print(banana.isfresh())
+
+orange = Orange()
+print(orange.isfresh())
+
+class Account:
+
+    def __init__(self, startowa_kwota):
+        self.saldo = startowa_kwota
+
+    def deposit(self, kwota):
+        self.saldo += kwota
+
+    def withdraw(self, kwota):
+        if kwota > self.saldo:
+            print("Za malo srodkow")
+        else:
+            self.saldo -= kwota
+
+    def transfer(self, konto_docelowe, kwota):
+        if kwota > self.saldo:
+            print("Za malo srodkow")
+        else:
+            self.saldo -= kwota
+            konto_docelowe.deposit(kwota)
+
+
+    def get_balance(self):
+        return self.saldo
+
+account1 = Account(2137)
+account2 = Account(500102)
+account3 = Account(-12)
+
+account1.deposit(1000)
+account3.withdraw(1345)
+account2.transfer(account3, 100)
+
+print("Saldo pierwszego konta: ", account1.get_balance())
+print("Saldo drugiego konta: ", account2.get_balance())
+print("Saldo trzeciego konta: ", account3.get_balance())
+
+liczby = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'), (90, 'XC'),
+
+          (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]
+
+
+def liczbanarzymskie(liczba):
+
+    rzymska = ''
+
+    while liczba > 0:
+
+        for i, r in liczby:
+
+            while liczba >= i:
+
+                rzymska += r
+
+                liczba -= i
+
+    return rzymska
+
+liczba  = int(input("Podaj liczbę arabską: "))
+liczba2  = int(input("Podaj liczbę arabską: "))
+print("Liczba  " +str(liczba ) +" w notacji rzymskiej to:  " +str(liczbanarzymskie(liczba)))
+print("Liczba  " +str(liczba2 ) +" w notacji rzymskiej to:  " +str(liczbanarzymskie(liczba2)))
+
+def roman_to_int(s):
+
+    roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    result = 0
+    for i in range(len(s)):
+        if i > 0 and roman_dict[s[i]] > roman_dict[s[i-1]]:
+            result += roman_dict[s[i]] - 2 * roman_dict[s[i-1]]
+        else:
+            result += roman_dict[s[i]]
+    return result
+def int_to_roman(num, result=None):
+
+    for value, symbol in sorted(liczby.items(), reverse=True):
+        while num >= value:
+            result += symbol
+            num -= value
+    return result
+
+def mnozenie(a, b):
+
+    num_a = roman_to_int(a)
+    num_b = roman_to_int(b)
+    result = num_a * num_b
+    return int_to_roman(result)
+
+print("Wynik mnozenia tych liczb to: ", liczbanarzymskie(liczba * liczba2))
+
+def dodawanie(a, b):
+
+    num_a = roman_to_int(a)
+    num_b = roman_to_int(b)
+    result = num_a + num_b
+    return int_to_roman(result)
+
+print("Wynik dodawania tych liczb to: ", liczbanarzymskie(liczba + liczba2))
+
+def odejmowanie(a, b):
+
+    num_a = roman_to_int(a)
+    num_b = roman_to_int(b)
+    result = num_a - num_b
+    return int_to_roman(result)
+
+print("Wynik odejmowania tych liczb to: ", liczbanarzymskie(liczba - liczba2))
+
+
+
+
