@@ -1,4 +1,4 @@
-#zad1
+print("zadanie 1")
 def zadanie1(tuple_):
     elementy = set(tuple_)
     for elem in elementy:
@@ -7,7 +7,10 @@ def zadanie1(tuple_):
 
 a = (3, 2, 5, 3)
 zadanie1(a)
-#zad2
+
+#####################
+
+print("zadanie 2")
 def zadanie2(n):
     if n == 0:
         return 0
@@ -19,14 +22,19 @@ def zadanie2(n):
 
 print(zadanie2(14))
 zadanie2(14)
-#zad3
+
+#####################
+
+print("zadanie 3")
 
 def zadanie3(*args):
     return sum(arg**2 for arg in args)
 
 print(zadanie3(5,-1,7))
 
-#zad4
+#####################
+
+print("zadanie 4")
 
 fruits = ['apple', 'banana', 'pomegranate',
           'plum', 'orange', 'melon', 'cherry', 'watermelon']
@@ -37,27 +45,36 @@ print(fruits2)
 print("Suma długości")
 print(fruits_len)
 
-#zad5
+#####################
 
-def zadanie5(cyfry):
-    slownik_dla_cyfr = {
-        '0': 'zero',
-        '1': 'jeden',
-        '2': 'dwa',
-        '3': 'trzy',
-        '4': 'cztery',
-        '5': 'piec',
-        '6': 'szesc',
-        '7': 'siedem',
-        '8': 'osiem',
-        '9': 'dziewiec',
-    }
-' '
+print("zadanie 5")
 
+def zadanie5(znaki):
+    tekst = ''
+    for z in znaki:
+        if z.isdigit():
+            tekst += ' ' + str(['zero', 'jeden', 'dwa', 'trzy', 'cztery', 'piec', 'szesc', 'siedem', 'osiem', 'dziewiec'][int(z)])
+    return tekst.strip("j")
 print(zadanie5('45j2'))
 
-#zad6
+#####################
 
-def zadanie6():
+print("zadanie 6")
+print("Funkcja wyswietla kolejno")
+print("stopnie Celsjusza, Kelwiny, stopnie Fahrenheita")
+def zadanie6(temp, jednostka):
+    if jednostka == 'c':
+        Kelwin = temp + 273
+        Fahrenheit = temp * (9/5) + 32
+        print(temp, Kelwin, Fahrenheit)
+    elif jednostka == 'k':
+        Celcjusz = temp - 273
+        Fahrenheit = temp * 9/5 - 460
+        print(Celcjusz, temp, Fahrenheit)
+    elif jednostka == 'f':
+        Celcjusz = (temp -32)/2
+        Kelwin = (temp + 460) * 5/9
+        print(Celcjusz, Kelwin, temp)
 
+zadanie6(20,'c')
 #zad7
