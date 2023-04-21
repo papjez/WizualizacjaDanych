@@ -1,0 +1,63 @@
+#zad1
+def zadanie1(tuple_):
+    elementy = set(tuple_)
+    for elem in elementy:
+        print(elementy)
+
+
+a = (3, 2, 5, 3)
+zadanie1(a)
+#zad2
+def zadanie2(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    return 2*zadanie2(n-1)+zadanie2(n-2)
+
+
+print(zadanie2(14))
+zadanie2(14)
+#zad3
+
+def zadanie3(*args):
+    return sum(arg**2 for arg in args)
+
+print(zadanie3(5,-1,7))
+
+#zad4
+
+fruits = ['apple', 'banana', 'pomegranate',
+          'plum', 'orange', 'melon', 'cherry', 'watermelon']
+fruits_len = sum([len(x) for x in fruits if "l" in x or "a" in x])
+fruits2 = [fruit for fruit in fruits if "l" in fruit or "a" in fruit]
+print("Lista owocow dla okreslonych warunkow")
+print(fruits2)
+print("Suma długości")
+print(fruits_len)
+
+#zad5
+
+def zadanie5(cyfry):
+    slownik_dla_cyfr = {
+        '0': 'zero',
+        '1': 'jeden',
+        '2': 'dwa',
+        '3': 'trzy',
+        '4': 'cztery',
+        '5': 'piec',
+        '6': 'szesc',
+        '7': 'siedem',
+        '8': 'osiem',
+        '9': 'dziewiec',
+    }
+' '
+
+print(zadanie5('45j2'))
+
+#zad6
+
+def zadanie6():
+
+#zad7
