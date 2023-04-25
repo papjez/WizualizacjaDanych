@@ -1,0 +1,35 @@
+import numpy
+
+A = numpy.array([(1,1,2),(2,1,0),(4, 1 , 2)])
+B = numpy.array([(2, 5, 7), (2, 8, 0), (4, 3, 1)])
+print("    A")
+print(A)
+print("    B")
+print(B)
+
+
+def dodawanie():
+    W = A+B
+    print("    W")
+    print(W)
+dodawanie()
+
+
+def mnozenie(A, B):
+    result = numpy.array([(0, 0, 0),(0, 0, 0),(0, 0, 0)])
+    for i in range(len(A)):
+        for j in range(len(B[0])):
+            for k in range(len(A)):
+                result[i][j] += A[i][k] * B[k][j]
+    for r in result:
+        print(r)
+print("   A*B")
+mnozenie(A, B)
+
+
+print("Transponowanie A")
+print(A.transpose())
+
+
+print("Odwracanie A")
+
