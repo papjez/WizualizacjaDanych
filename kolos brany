@@ -1,0 +1,109 @@
+#zad1
+Nazwa_rzeki=np.array([["Amazonka","Nil","Jangcy","Missisipi-Missouri",
+                       "Huang He","Ob Irtysz","Kongo","Mekong","Amur","Lena",
+                       "Parana","Mackanzie","Niger","Jenisej","Wołga"]])
+
+Kontynent=np.array([["Ameryka Południowa","Afryka","Eurazja","Ameryka Północna","Eurazja","Eurazja",
+                     "Afryka","Eurazja","Eurazja","Eurazja","Ameryka Południowa","Ameryka Północna",
+                     "Afryka","Eurazja","Eurazja"]])
+
+Długość=np.array([[7040,6695,6300,6020,5464,5410,4700,4500,4440,4400,4380,4240,4160,4102,3530]])
+
+Powierzchnia=np.array([[7200,2870,1807,3229,752,2972,3690,810,1855,2490,3100,1760,2117,2580,1360]])
+
+Państwa=np.array([[3,7,1,1,1,3,3,6,3,1,3,1,4,2,2]])
+
+#1.1
+print(np.count_nonzero(Nazwa_rzeki))
+#1.2
+print((Nazwa_rzeki[(Państwa==3)]))
+#1.3
+print(np.count_nonzero(Nazwa_rzeki[(Długość<5000)]))
+#1.4
+print((Nazwa_rzeki[(Nazwa_rzeki>"M")]))
+#1.5
+
+#1.6
+print((Nazwa_rzeki[(Powierzchnia>2000)]))
+#zad2
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-1, 3, 100)
+
+
+y1 = np.exp(x)
+y2 = np.exp(2*x)
+
+
+plt.figure()
+
+
+plt.subplot(2, 1, 1)
+plt.plot(x, y1, 'b-', label='y = e^x')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+
+
+plt.subplot(2, 1, 2)
+plt.plot(x, y2, 'g--', label='y = e^(2x)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+#zad 3
+import numpy as np
+import pandas as pd
+
+
+
+diamonds_data = pd.read_csv('diamonds.csv')
+
+#3.1
+mean_price_premium = diamonds_data[diamonds_data['cut'] == 'Premium']['price'].mean()
+print(f"Średnia cena diamentów typu 'Premium': {mean_price_premium}")
+
+#3.2
+max_carat_E = diamonds_data[diamonds_data['color'] == 'E']['carat'].max()
+diamond_E = diamonds_data[(diamonds_data['color'] == 'E') & (diamonds_data['carat'] == max_carat_E)]
+print("Informacje o największym diamentzie koloru 'E':")
+print(diamond_E)
+
+#3.3
+import matplotlib.pyplot as plt
+
+mean_price_by_cut = diamonds_data.groupby('cut')['price'].mean()
+mean_price_by_cut.plot(kind='bar')
+plt.xlabel('Cut')
+plt.ylabel('Mean Price')
+plt.title('Mean Price by Cut')
+plt.show()
+
+# 3.4
+colors_dict = {'D': 'navy', 'E': 'yellow', 'F': 'purple', 'G': 'green', 'H': 'black', 'I': 'orange', 'J': 'red'}
+colors = diamonds_data['color'].map(colors_dict)
+plt.scatter(diamonds_data['carat'], diamonds_data['price'], c=colors, alpha=0.5)
+plt.xlabel('Carat')
+plt.ylabel('Price')
+plt.title('Price vs Carat')
+plt.show()
+#zad 4
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
+data = pd.read_csv('attention.csv')
+
+
+sns.boxplot(x='attention', y='score', hue='subject', data=data, palette='Blues')
+
+
+plt.title('Attention vs Score')
+plt.xlabel('Attention')
+plt.ylabel('Score')
+
+
